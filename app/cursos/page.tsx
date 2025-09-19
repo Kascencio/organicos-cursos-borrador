@@ -765,17 +765,62 @@ export default function CursosLanding() {
               {
                 title: "Mayor Rentabilidad",
                 text: "Mejora la salud de tu suelo y optimiza la producción, reduciendo costos.",
-                icon: "📈",
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-12 w-12 text-primary"
+                  >
+                    <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
+                    <polyline points="17 6 23 6 23 12" />
+                  </svg>
+                ),
               },
               {
                 title: "Ingreso Adicional Seguro",
                 text: "Recibirás el 55% del valor de cada bono de carbono vendido.",
-                icon: "💰",
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-12 w-12 text-secondary"
+                  >
+                    <rect x="2" y="7" width="20" height="10" rx="2" ry="2" />
+                    <circle cx="12" cy="12" r="3" />
+                    <path d="M6 9v6" />
+                    <path d="M18 9v6" />
+                  </svg>
+                ),
               },
               {
                 title: "Suelos Más Sanos",
                 text: "Mejora la retención de agua y la calidad del forraje, protegiéndote contra sequías.",
-                icon: "🌱",
+                icon: (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="h-12 w-12 text-accent"
+                  >
+                    <path d="M12 2C7 2 3 6 3 11c0 7 9 11 9 11s9-4 9-11c0-5-4-9-9-9z" />
+                    <path d="M12 7v8" />
+                    <path d="M8 13l4 2 4-2" />
+                  </svg>
+                ),
               },
             ].map((item, index) => (
               <Card key={index} className="text-center p-8 hover:shadow-2xl transition-shadow duration-300">
