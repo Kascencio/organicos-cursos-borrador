@@ -1,0 +1,871 @@
+"use client"
+
+import Image from "next/image"
+import Link from "next/link"
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Badge } from "@/components/ui/badge"
+import { useState } from "react"
+
+export default function CursosLanding() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
+  return (
+    <div className="min-h-screen bg-background">
+      {/* Top Bar */}
+      <div className="gradient-primary text-primary-foreground py-3">
+        <div className="container mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-center">
+            <div className="flex items-center mb-2 md:mb-0">
+              <a
+                href="https://www.youtube.com/@OrganicosdelTropico"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-youtube"
+                >
+                  <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                  <path d="m10 15 5-3-5-3z" />
+                </svg>
+              </a>
+            </div>
+            <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-6 text-sm">
+              <a
+                href="https://maps.google.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-map-pin mr-1"
+                >
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
+                  <circle cx="12" cy="10" r="3" />
+                </svg>
+                Villahermosa, Tabasco
+              </a>
+              <a
+                href="mailto:organicosdeltropico@yahoo.com.mx"
+                className="flex items-center text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-mail mr-1"
+                >
+                  <rect width="20" height="16" x="2" y="4" rx="2" />
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                </svg>
+                organicosdeltropico@yahoo.com.mx
+              </a>
+              <a
+                href="tel:+529932878909"
+                className="flex items-center text-primary-foreground hover:text-primary-foreground/80 transition-colors duration-300"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-phone mr-1"
+                >
+                  <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+                +52 993 287 8909
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Header */}
+      <header className="bg-background/95 backdrop-blur-sm shadow-lg sticky top-0 z-50 border-b border-border">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center">
+              <Link href="/" className="transition-transform hover:scale-105">
+                <Image
+                  src="/images/pijije-logo.jpg"
+                  alt="Pijije Regenerativo"
+                  width={200}
+                  height={60}
+                  className="h-12 w-auto"
+                />
+              </Link>
+            </div>
+            <nav className="hidden md:flex space-x-8">
+              <Link href="/" className="text-foreground hover:text-primary font-medium transition-colors duration-300">
+                Orgánicos del Trópico
+              </Link>
+              <Link
+                href="/que-hacemos"
+                className="text-foreground hover:text-primary font-medium transition-colors duration-300"
+              >
+                ¿Qué Hacemos?
+              </Link>
+              <Link
+                href="/eventos"
+                className="text-foreground hover:text-primary font-medium transition-colors duration-300"
+              >
+                Eventos
+              </Link>
+              <Link
+                href="/cursos"
+                className="relative text-primary font-semibold after:absolute after:bottom-[-8px] after:left-0 after:w-full after:h-1 after:bg-primary after:rounded-full"
+              >
+                Cursos
+              </Link>
+              <Link
+                href="/contacto"
+                className="text-foreground hover:text-primary font-medium transition-colors duration-300"
+              >
+                Contacto
+              </Link>
+            </nav>
+            <div className="hidden md:flex items-center space-x-4">
+              <Button
+                asChild
+                variant="outline"
+                size="sm"
+                className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+              >
+                <Link href="/cursos/login">Iniciar Sesión</Link>
+              </Button>
+              <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
+                <Link href="/cursos/registro">Registrarse</Link>
+              </Button>
+            </div>
+            <div className="md:hidden">
+              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="focus:outline-none">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="lucide lucide-menu"
+                >
+                  <line x1="4" x2="20" y1="12" y2="12" />
+                  <line x1="4" x2="20" y1="6" y2="6" />
+                  <line x1="4" x2="20" y1="18" y2="18" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          {/* Mobile Menu */}
+          {mobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-border">
+              <div className="flex flex-col space-y-4 pt-4">
+                <Link
+                  href="/"
+                  className="text-foreground hover:text-primary font-medium transition-colors duration-300"
+                >
+                  Orgánicos del Trópico
+                </Link>
+                <Link
+                  href="/que-hacemos"
+                  className="text-foreground hover:text-primary font-medium transition-colors duration-300"
+                >
+                  ¿Qué Hacemos?
+                </Link>
+                <Link
+                  href="/eventos"
+                  className="text-foreground hover:text-primary font-medium transition-colors duration-300"
+                >
+                  Eventos
+                </Link>
+                <Link href="/cursos" className="text-primary font-medium">
+                  Cursos
+                </Link>
+                <Link
+                  href="/contacto"
+                  className="text-foreground hover:text-primary font-medium transition-colors duration-300"
+                >
+                  Contacto
+                </Link>
+                <div className="flex flex-col space-y-2 pt-4 border-t border-border">
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="sm"
+                    className="border-primary text-primary hover:bg-primary hover:text-primary-foreground bg-transparent"
+                  >
+                    <Link href="/cursos/login">Iniciar Sesión</Link>
+                  </Button>
+                  <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
+                    <Link href="/cursos/registro">Registrarse</Link>
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+        </div>
+      </header>
+
+      {/* Hero Section */}
+      <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20"></div>
+        <div className="absolute inset-0 bg-[url('/lush-green-pasture-with-cattle-grazing-sustainable.jpg')] bg-cover bg-center opacity-10"></div>
+
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            {/* Left Content */}
+            <div className="text-center lg:text-left space-y-8">
+              <div className="space-y-4">
+                <Badge className="bg-secondary text-secondary-foreground text-sm px-4 py-2 animate-fadeIn">
+                  🌱 Educación Especializada
+                </Badge>
+                <h1 className="text-5xl lg:text-7xl font-bold text-balance animate-slideInLeft">
+                  Plataforma de <span className="text-primary">Cursos</span>
+                </h1>
+                <h2 className="text-3xl lg:text-4xl font-semibold text-secondary animate-slideInLeft animation-delay-300">
+                  Pijije Regenerativo
+                </h2>
+                <p className="text-xl text-muted-foreground max-w-2xl animate-slideInLeft animation-delay-600">
+                  Aprende ganadería regenerativa de expertos y accede a nuestro programa de bonos de carbono con guía
+                  especializada
+                </p>
+              </div>
+
+              <div className="flex flex-col sm:flex-row gap-4 animate-slideInLeft animation-delay-900">
+                <Button
+                  size="lg"
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+                >
+                  <Link href="/cursos/registro" className="flex items-center gap-2">
+                    Comenzar Ahora
+                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    </svg>
+                  </Link>
+                </Button>
+                <Button
+                  variant="outline"
+                  size="lg"
+                  className="border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground px-8 py-6 text-lg rounded-xl bg-transparent"
+                >
+                  <Link href="#temario">Ver Contenido</Link>
+                </Button>
+              </div>
+            </div>
+
+            {/* Right Content - Course Preview Card */}
+            <div className="animate-slideInRight animation-delay-600">
+              <Card className="border-2 border-primary/20 shadow-2xl overflow-hidden bg-card/80 backdrop-blur-sm">
+                <div className="relative h-64">
+                  <Image
+                    src="/regenerative-agriculture-course-preview-profession.jpg"
+                    alt="Vista previa del curso"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+                  <div className="absolute bottom-4 left-4 right-4">
+                    <h3 className="text-white text-xl font-bold">Curso Completo Disponible</h3>
+                  </div>
+                </div>
+                <CardContent className="p-6">
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <polygon points="23 7 16 12 23 17 23 7"></polygon>
+                          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                        </svg>
+                        <span>8+ horas</span>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                          <line x1="8" y1="21" x2="16" y2="21"></line>
+                          <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        <span>Online</span>
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <div className="text-2xl font-bold text-primary">$800 MXN</div>
+                    </div>
+                  </div>
+                  <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
+                    <Link href="/cursos/checkout">Inscribirme Ahora</Link>
+                  </Button>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-20 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="text-center animate-scaleIn">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">8+</div>
+              <p className="text-muted-foreground font-medium">Horas de Contenido</p>
+            </div>
+            <div className="text-center animate-scaleIn animation-delay-300">
+              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">5</div>
+              <p className="text-muted-foreground font-medium">Módulos Especializados</p>
+            </div>
+            <div className="text-center animate-scaleIn animation-delay-600">
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">100%</div>
+              <p className="text-muted-foreground font-medium">Satisfacción</p>
+            </div>
+            <div className="text-center animate-scaleIn animation-delay-900">
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
+              <p className="text-muted-foreground font-medium">Acceso Total</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Featured Course Section (UNIFIED) */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 space-y-4">
+            <Badge className="bg-primary text-primary-foreground text-lg px-6 py-3 rounded-full">
+              ⭐ Curso Destacado
+            </Badge>
+            <h2 className="text-4xl lg:text-5xl font-bold text-balance">
+              Ganadería Regenerativa y <span className="text-primary">Bonos de Carbono</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+              Domina las técnicas más avanzadas para regenerar tu rancho, aumentar tu rentabilidad y generar ingresos
+              adicionales con nuestro programa de bonos de carbono.
+            </p>
+          </div>
+
+          <div className="max-w-7xl mx-auto">
+            <Card className="border-2 border-primary/20 shadow-2xl overflow-hidden bg-gradient-card">
+              <div className="grid grid-cols-1 lg:grid-cols-3 gap-0">
+                {/* Image Section */}
+                <div className="relative h-80 lg:h-full lg:col-span-1">
+                  <Image
+                    src="/sustainable-cattle-farming-regenerative-agricultur.jpg"
+                    alt="Ganadería Regenerativa"
+                    fill
+                    className="object-cover"
+                  />
+                </div>
+
+                {/* Content Section */}
+                <CardContent className="p-8 lg:col-span-2 flex flex-col justify-between">
+                  <div className="space-y-6">
+                    <div>
+                      <h3 className="text-3xl font-bold mb-4">Todo lo que Obtienes</h3>
+                      <p className="text-muted-foreground text-lg leading-relaxed mb-6">
+                        Este curso es tu puerta de entrada al programa de Bonos de Carbono. Aprende de expertos, aplica
+                        técnicas probadas y únete a una comunidad de ganaderos innovadores.
+                      </p>
+                    </div>
+
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-muted-foreground">
+                      {[
+                        "Acceso por 3 meses a 8+ horas de video HD",
+                        "5 módulos de contenido especializado",
+                        "Certificado digital al finalizar",
+                        'Acceso a videoconferencias exclusivas en el grupo "Manejo Holístico Tropical"',
+                      ].map((item, index) => (
+                        <div key={index} className="flex items-start gap-3">
+                          <svg
+                            className="h-6 w-6 text-primary mt-1 flex-shrink-0"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                          >
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                          </svg>
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+
+                    <div className="flex items-center justify-between pt-4 border-t border-border">
+                      <div className="space-y-1">
+                        <div className="flex items-baseline gap-2">
+                          <span className="text-4xl font-bold text-primary">$800</span>
+                          <span className="text-lg text-muted-foreground">MXN</span>
+                        </div>
+                      </div>
+                      <div className="text-right">
+                        <Badge className="bg-accent text-accent-foreground">🎯 Requisito para Bonos de Carbono</Badge>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4 mt-8">
+                    <Button
+                      size="lg"
+                      className="flex-1 bg-primary hover:bg-primary/90 text-primary-foreground rounded-xl"
+                    >
+                      <Link href="/cursos/checkout" className="flex items-center gap-2">
+                        Inscribirme
+                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            strokeWidth={2}
+                            d="M13 7l5 5m0 0l-5 5m5-5H6"
+                          />
+                        </svg>
+                      </Link>
+                    </Button>
+                    <Button
+                      variant="outline"
+                      size="lg"
+                      className="flex-1 border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground rounded-xl bg-transparent"
+                    >
+                      <Link href="#temario">Ver Contenido del Curso</Link>
+                    </Button>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Syllabus Section */}
+      <section id="temario" className="py-24 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-balance">
+              Contenido del <span className="text-primary">Curso</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
+              5 módulos diseñados por expertos para transformar tu conocimiento en ganadería regenerativa.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+            {/* Módulo 1 */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-l-4 border-l-primary bg-gradient-card">
+              <CardHeader className="bg-primary text-primary-foreground rounded-t-lg">
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <div className="bg-primary-foreground text-primary rounded-full p-2">
+                    <span className="font-bold text-lg">1</span>
+                  </div>
+                  Manejo Holístico
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
+                <div className="space-y-4">
+                  <div className="border-l-4 border-l-primary pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-primary mb-2">Situación Actual de la Ganadería</h5>
+                    <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Malas prácticas vs prácticas regenerativas</li>
+                      <li>Objetivos de la ganadería regenerativa</li>
+                      <li>Importancia de los bonos de carbono</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-l-secondary pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-secondary mb-2">Impacto de la Revolución Verde</h5>
+                    <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Ciclo de agroquímicos y consecuencias</li>
+                      <li>Daños a la salud y medio ambiente</li>
+                      <li>Contaminación de aguas subterráneas</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-l-accent pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-accent mb-2">Ganadería y Cambio Climático</h5>
+                    <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Contribución a gases efecto invernadero</li>
+                      <li>Ganadería confinada e impacto ambiental</li>
+                      <li>Huella de carbono en producción</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Módulo 2 */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-l-4 border-l-secondary bg-gradient-card">
+              <CardHeader className="bg-secondary text-secondary-foreground rounded-t-lg">
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <div className="bg-secondary-foreground text-secondary rounded-full p-2">
+                    <span className="font-bold text-lg">2</span>
+                  </div>
+                  Pastoreo Regenerativo
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
+                <div className="space-y-4">
+                  <div className="border-l-4 border-l-secondary pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-secondary mb-2">Bases Teóricas del Pastoreo</h5>
+                    <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Simbiosis entre sabana y herbívoros</li>
+                      <li>Leyes del pastoreo de André Voisin</li>
+                      <li>Ganadería regenerativa vs extensiva</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-l-accent pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-accent mb-2">Implementación Práctica</h5>
+                    <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Agua, tiempo de impacto y reposo</li>
+                      <li>Densidad animal óptima</li>
+                      <li>Pastoreo multiespecie</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-l-primary pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-primary mb-2">Beneficios del Sistema</h5>
+                    <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
+                      <li>Beneficios económicos</li>
+                      <li>Beneficios productivos</li>
+                      <li>Beneficios ecológicos</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Módulo 3 */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-l-4 border-l-accent bg-gradient-card">
+              <CardHeader className="bg-accent text-accent-foreground rounded-t-lg">
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <div className="bg-accent-foreground text-accent rounded-full p-2">
+                    <span className="font-bold text-lg">3</span>
+                  </div>
+                  Mejoramiento Genético Holístico y Búfalos
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
+                <div className="space-y-4">
+                  <div className="border-l-4 border-l-accent pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-accent mb-2">Genética Animal Adaptada</h5>
+                    <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                      <li>Rentabilidad máxima por hectárea</li>
+                      <li>Cruzamiento y crianza pura</li>
+                      <li>Selección de eficiencia funcional</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-l-primary pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-primary mb-2">Búfalos en Sistemas Regenerativos</h5>
+                    <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                      <li>Producción de leche y carne</li>
+                      <li>Comparativa sistemas tradicionales</li>
+                      <li>Adaptación al trópico húmedo</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-l-secondary pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-secondary mb-2">Selección Natural</h5>
+                    <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                      <li>Animales eficientes según el medio</li>
+                      <li>Fertilidad y adaptación</li>
+                      <li>Individuos super fértiles</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Módulo 4 */}
+            <Card className="group hover:shadow-2xl transition-all duration-300 border-l-4 border-l-destructive bg-gradient-card">
+              <CardHeader className="bg-destructive text-destructive-foreground rounded-t-lg">
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <div className="bg-destructive-foreground text-destructive rounded-full p-2">
+                    <span className="font-bold text-lg">4</span>
+                  </div>
+                  Bonos de Carbono
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-6 space-y-6">
+                <div className="space-y-4">
+                  <div className="border-l-4 border-l-destructive pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-red-700 mb-2">Fundamentos del Carbono</h5>
+                    <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                      <li>El carbono y su efecto a gran escala</li>
+                      <li>Principales fuentes de GEI</li>
+                      <li>Sector ganadero en GEI</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-l-primary pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-primary mb-2">Programa de Bonos</h5>
+                    <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                      <li>Objetivos del programa</li>
+                      <li>Tipos de proyectos para mitigar CO2e</li>
+                      <li>Iniciativa Pijije Regenerativo</li>
+                    </ul>
+                  </div>
+
+                  <div className="border-l-4 border-l-secondary pl-4 bg-muted/50 p-4 rounded-r-lg">
+                    <h5 className="font-semibold text-secondary mb-2">Comercialización</h5>
+                    <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
+                      <li>Clasificación: regulados y voluntarios</li>
+                      <li>Proceso de emisión y comercialización</li>
+                      <li>Modelo de negocio y contratos</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Módulo 5 - Full Width */}
+            <Card className="lg:col-span-2 group hover:shadow-2xl transition-all duration-300 border-l-4 border-l-blue-500 bg-gradient-card">
+              <CardHeader className="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-t-lg">
+                <CardTitle className="flex items-center gap-3 text-xl">
+                  <div className="bg-white text-blue-600 rounded-full p-2">
+                    <span className="font-bold text-lg">5</span>
+                  </div>
+                  Día de Campo - Aplicación Práctica
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="p-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-l-blue-500 pl-4 bg-blue-50 p-4 rounded-r-lg">
+                      <h5 className="font-semibold text-blue-800 mb-2">Aplicación Práctica</h5>
+                      <ul className="text-sm text-gray-800 space-y-1 list-disc list-inside">
+                        <li>Videos del día de campo</li>
+                        <li>Demostración práctica de conceptos teóricos</li>
+                        <li>Casos reales de implementación</li>
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="border-l-4 border-l-blue-400 pl-4 bg-blue-50 p-4 rounded-r-lg">
+                      <h5 className="font-semibold text-blue-800 mb-2">Desarrollo de Temas</h5>
+                      <ul className="text-sm text-gray-800 space-y-1 list-disc list-inside">
+                        <li>Continuación de módulos anteriores</li>
+                        <li>Ejemplos en campo real</li>
+                        <li>Técnicas aplicadas en vivo</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section className="py-24 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 space-y-4">
+            <h2 className="text-4xl lg:text-5xl font-bold text-balance">
+              Galería de <span className="text-primary">Eventos</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Nuestros eventos y conferencias sobre ganadería regenerativa han impactado a miles de productores
+            </p>
+          </div>
+
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            {[
+              { src: "/images/galeria/evento-2.jpg", alt: "Conferencia en auditorio" },
+              { src: "/images/galeria/evento-3.jpg", alt: "Presentación Manejo Holístico Tropical" },
+              { src: "/images/galeria/evento-4.jpg", alt: "Stands de exhibición" },
+              { src: "/images/galeria/evento-5.jpg", alt: "Audiencia en conferencia" },
+              { src: "/images/galeria/evento-6.jpg", alt: "Participantes del evento" },
+              { src: "/images/galeria/evento-7.jpg", alt: "Centro de Convenciones Campeche" },
+              { src: "/images/galeria/evento-8.jpg", alt: "Fila de participantes esperando" },
+              { src: "/images/galeria/evento-9.jpg", alt: "Presentación en salón" },
+              { src: "/images/galeria/evento-10.jpg", alt: "Mesa de registro" },
+              { src: "/images/galeria/evento-11.jpg", alt: "Conferencia Manejo Holístico" },
+              { src: "/images/galeria/evento-12.jpg", alt: "Área de networking" },
+              { src: "/images/galeria/evento-13.jpg", alt: "Panel de expertos" },
+            ].map((image, index) => (
+              <div
+                key={index}
+                className="group relative h-64 rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+              >
+                <Image
+                  src={image.src || "/placeholder.svg"}
+                  alt={image.alt}
+                  fill
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute bottom-4 left-4 right-4 text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-sm font-medium">{image.alt}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl font-bold mb-4">Contacto</h2>
+          </div>
+
+          <div className="max-w-2xl mx-auto text-center">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="flex flex-col items-center">
+                <div className="bg-green-100 p-3 rounded-full mb-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-message-circle text-green-600"
+                  >
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z" />
+                  </svg>
+                </div>
+                <p className="font-semibold">WhatsApp</p>
+                <p className="text-sm text-gray-600">+52 993 287 8909</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <div className="bg-blue-100 p-3 rounded-full mb-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-phone text-blue-600"
+                  >
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
+                  </svg>
+                </div>
+                <p className="font-semibold">Tel</p>
+                <p className="text-sm text-gray-600">+52 993 136 8705</p>
+              </div>
+
+              <div className="flex flex-col items-center">
+                <div className="bg-red-100 p-3 rounded-full mb-3">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-mail text-red-600"
+                  >
+                    <rect width="20" height="16" x="2" y="4" rx="2" />
+                    <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+                  </svg>
+                </div>
+                <p className="font-semibold">Email</p>
+                <p className="text-sm text-gray-600">organicosdeltropico@yahoo.com.mx</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-400">
+        <div className="container mx-auto px-4 py-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="text-center md:text-left">
+              <p className="text-lg">© 2024 PIJIJE REGENERATIVO</p>
+              <div className="flex flex-wrap justify-center md:justify-start gap-4 mt-4 text-sm">
+                <Link href="/" className="hover:text-white transition-colors">
+                  Orgánicos del Trópico
+                </Link>
+                <span>•</span>
+                <Link href="/que-hacemos" className="hover:text-white transition-colors">
+                  ¿Qué Hacemos?
+                </Link>
+                <span>•</span>
+                <Link href="/eventos" className="hover:text-white transition-colors">
+                  Eventos
+                </Link>
+                <span>•</span>
+                <Link href="/pijije-regenerativo" className="hover:text-white transition-colors">
+                  Pijije Regenerativo
+                </Link>
+                <span>•</span>
+                <Link href="/aviso-privacidad" className="hover:text-white transition-colors">
+                  Aviso de Privacidad
+                </Link>
+              </div>
+            </div>
+            <div className="text-center md:text-right">
+              <div className="flex justify-center md:justify-end mb-4">
+                <a
+                  href="https://www.youtube.com/@OrganicosdelTropico"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="bg-gray-800 p-3 rounded-full hover:bg-red-600 transition-colors duration-300"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="lucide lucide-youtube"
+                  >
+                    <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17" />
+                    <path d="m10 15 5-3-5-3z" />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+  )
+}
