@@ -1,24 +1,34 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
-import { useState } from "react"
+import Image from "next/image";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { useState } from "react";
 
 export default function CursosLanding() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Helper component for checkmarks
   const CheckListItem = ({ children }) => (
     <div className="flex items-start gap-3">
-      <svg className="h-6 w-6 text-primary mt-1 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+      <svg
+        className="h-6 w-6 text-primary mt-1 flex-shrink-0"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M5 13l4 4L19 7"
+        />
       </svg>
       <span className="text-muted-foreground">{children}</span>
     </div>
-  )
+  );
 
   return (
     <div className="min-h-screen bg-background">
@@ -72,7 +82,8 @@ export default function CursosLanding() {
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                 Carretera Santa Adelaida-Palizada Km 3.5, C.P. 24200, Palizada Campeche Mex.
+                Carretera Santa Adelaida-Palizada Km 3.5, C.P. 24200, Palizada
+                Campeche Mex.
               </a>
               <a
                 href="mailto:organicosdeltropico@yahoo.com.mx"
@@ -136,7 +147,10 @@ export default function CursosLanding() {
               </Link>
             </div>
             <nav className="hidden md:flex space-x-8">
-              <Link href="/" className="text-foreground hover:text-primary font-medium transition-colors duration-300">
+              <Link
+                href="/"
+                className="text-foreground hover:text-primary font-medium transition-colors duration-300"
+              >
                 Orgánicos del Trópico
               </Link>
               <Link
@@ -173,12 +187,19 @@ export default function CursosLanding() {
               >
                 <Link href="/cursos/login">Iniciar Sesión</Link>
               </Button>
-              <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
+              <Button
+                asChild
+                size="sm"
+                className="bg-primary hover:bg-primary/90"
+              >
                 <Link href="/cursos/registro">Registrarse</Link>
               </Button>
             </div>
             <div className="md:hidden">
-              <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} className="focus:outline-none">
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="focus:outline-none"
+              >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="24"
@@ -239,7 +260,11 @@ export default function CursosLanding() {
                   >
                     <Link href="/cursos/login">Iniciar Sesión</Link>
                   </Button>
-                  <Button asChild size="sm" className="bg-primary hover:bg-primary/90">
+                  <Button
+                    asChild
+                    size="sm"
+                    className="bg-primary hover:bg-primary/90"
+                  >
                     <Link href="/cursos/registro">Registrarse</Link>
                   </Button>
                 </div>
@@ -252,7 +277,7 @@ export default function CursosLanding() {
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-secondary/10 to-accent/20"></div>
-        <div className="absolute inset-0 bg-white opacity-10"></div>
+        <div className="absolute inset-0 bg-[url('/lush-green-pasture-with-cattle-grazing-sustainable.jpg')] bg-cover bg-center opacity-10"></div>
 
         <div className="container mx-auto px-4 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -269,8 +294,8 @@ export default function CursosLanding() {
                   Pijije Regenerativo
                 </h2>
                 <p className="text-xl text-muted-foreground max-w-2xl animate-slideInLeft animation-delay-600">
-                  Aprende ganadería regenerativa de expertos y accede a nuestro programa de bonos de carbono con guía
-                  especializada
+                  Aprende ganadería regenerativa de expertos y accede a nuestro
+                  programa de bonos de carbono con guía especializada
                 </p>
               </div>
 
@@ -279,10 +304,23 @@ export default function CursosLanding() {
                   size="lg"
                   className="bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
                 >
-                  <Link href="/cursos/registro" className="flex items-center gap-2">
+                  <Link
+                    href="/cursos/registro"
+                    className="flex items-center gap-2"
+                  >
                     Comenzar Ahora
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
                     </svg>
                   </Link>
                 </Button>
@@ -301,29 +339,57 @@ export default function CursosLanding() {
               <Card className="border-2 border-primary/20 shadow-2xl overflow-hidden bg-card/80 backdrop-blur-sm">
                 <div className="relative h-80">
                   <Image
-                    src="/placeholder.svg?height=320&width=480&text=Curso+Completo+Disponible"
+                    src="/images/logo-curso.jpeg"
                     alt="Curso-Taller Ganadería Regenerativa y bonos de carbono"
                     fill
                     className="object-cover bg-white"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                   <div className="absolute bottom-4 left-4 right-4">
-                    <h3 className="text-white text-xl font-bold">Curso Completo Disponible</h3>
+                    <h3 className="text-white text-xl font-bold">
+                      Curso Completo Disponible
+                    </h3>
                   </div>
                 </div>
                 <CardContent className="p-6">
                   <div className="flex items-center justify-between mb-4">
                     <div className="flex items-center gap-4 text-sm text-muted-foreground">
                       <div className="flex items-center gap-1">
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg
+                          className="h-4 w-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
                           <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                          <rect
+                            x="1"
+                            y="5"
+                            width="15"
+                            height="14"
+                            rx="2"
+                            ry="2"
+                          ></rect>
                         </svg>
                         <span>8+ horas</span>
                       </div>
                       <div className="flex items-center gap-1">
-                        <svg className="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <svg
+                          className="h-4 w-4"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <rect
+                            x="2"
+                            y="3"
+                            width="20"
+                            height="14"
+                            rx="2"
+                            ry="2"
+                          ></rect>
                           <line x1="8" y1="21" x2="16" y2="21"></line>
                           <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
@@ -331,7 +397,9 @@ export default function CursosLanding() {
                       </div>
                     </div>
                     <div className="text-right">
-                      <div className="text-2xl font-bold text-primary">$800 MXN</div>
+                      <div className="text-2xl font-bold text-primary">
+                        $800 MXN
+                      </div>
                     </div>
                   </div>
                   <Button className="w-full bg-secondary hover:bg-secondary/90 text-secondary-foreground">
@@ -349,15 +417,23 @@ export default function CursosLanding() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8 text-center">
             <div className="text-center animate-scaleIn animation-delay-300">
-              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">5</div>
-              <p className="text-muted-foreground font-medium">Módulos Especializados</p>
+              <div className="text-4xl md:text-5xl font-bold text-secondary mb-2">
+                5
+              </div>
+              <p className="text-muted-foreground font-medium">
+                Módulos Especializados
+              </p>
             </div>
             <div className="text-center animate-scaleIn animation-delay-600">
-              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">100%</div>
+              <div className="text-4xl md:text-5xl font-bold text-accent mb-2">
+                100%
+              </div>
               <p className="text-muted-foreground font-medium">Satisfacción</p>
             </div>
             <div className="text-center animate-scaleIn animation-delay-900">
-              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">24/7</div>
+              <div className="text-4xl md:text-5xl font-bold text-primary mb-2">
+                24/7
+              </div>
               <p className="text-muted-foreground font-medium">Acceso Total</p>
             </div>
           </div>
@@ -369,11 +445,12 @@ export default function CursosLanding() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold text-balance">
-              Tu Acceso Total al Conocimiento <span className="text-primary">Regenerativo</span>
+              Tu Acceso Total al Conocimiento{" "}
+              <span className="text-primary">Regenerativo</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              Todo lo que necesitas en un solo lugar. Invierte en tu futuro y el de tu rancho con nuestro curso
-              especializado.
+              Todo lo que necesitas en un solo lugar. Invierte en tu futuro y el
+              de tu rancho con nuestro curso especializado.
             </p>
           </div>
 
@@ -381,43 +458,86 @@ export default function CursosLanding() {
             <div className="grid grid-cols-1 lg:grid-cols-2">
               {/* Left Column: What Includes */}
               <div className="p-8 lg:p-12 space-y-6">
-                <h3 className="text-2xl font-bold text-primary mb-4">¿Qué Incluye tu Inscripción?</h3>
+                <h3 className="text-2xl font-bold text-primary mb-4">
+                  ¿Qué Incluye tu Inscripción?
+                </h3>
                 <ul className="space-y-4">
                   {[
                     {
                       icon: (
-                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg
+                          className="h-6 w-6"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
                           <polygon points="23 7 16 12 23 17 23 7"></polygon>
-                          <rect x="1" y="5" width="15" height="14" rx="2" ry="2"></rect>
+                          <rect
+                            x="1"
+                            y="5"
+                            width="15"
+                            height="14"
+                            rx="2"
+                            ry="2"
+                          ></rect>
                         </svg>
                       ),
                       title: "8+ Horas de Contenido en Video HD",
-                      description: "Accede a 5 módulos especializados con lecciones prácticas y teóricas.",
+                      description:
+                        "Accede a 5 módulos especializados con lecciones prácticas y teóricas.",
                     },
                     {
                       icon: (
-                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg
+                          className="h-6 w-6"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
                           <circle cx="12" cy="12" r="10" />
                           <polyline points="12,6 12,12 16,14" />
                         </svg>
                       ),
                       title: "Acceso por 3 Meses",
-                      description: "Aprende a tu propio ritmo con acceso ilimitado a la plataforma 24/7.",
+                      description:
+                        "Aprende a tu propio ritmo con acceso ilimitado a la plataforma 24/7.",
                     },
                     {
                       icon: (
-                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                        <svg
+                          className="h-6 w-6"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
                           <circle cx="12" cy="8" r="7" />
                           <polyline points="8.21,13.89 7,23 12,20 17,23 15.79,13.88" />
                         </svg>
                       ),
                       title: "Certificado Oficial",
-                      description: "Obtén un certificado digital que avala tu conocimiento al finalizar el curso.",
+                      description:
+                        "Obtén un certificado digital que avala tu conocimiento al finalizar el curso.",
                     },
                     {
                       icon: (
-                        <svg className="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                          <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                        <svg
+                          className="h-6 w-6"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                        >
+                          <rect
+                            x="2"
+                            y="3"
+                            width="20"
+                            height="14"
+                            rx="2"
+                            ry="2"
+                          ></rect>
                           <line x1="8" y1="21" x2="16" y2="21"></line>
                           <line x1="12" y1="17" x2="12" y2="21"></line>
                         </svg>
@@ -428,10 +548,14 @@ export default function CursosLanding() {
                     },
                   ].map((item, index) => (
                     <li key={index} className="flex items-start gap-4">
-                      <div className="text-secondary mt-1 flex-shrink-0">{item.icon}</div>
+                      <div className="text-secondary mt-1 flex-shrink-0">
+                        {item.icon}
+                      </div>
                       <div>
                         <h4 className="font-semibold">{item.title}</h4>
-                        <p className="text-muted-foreground text-sm">{item.description}</p>
+                        <p className="text-muted-foreground text-sm">
+                          {item.description}
+                        </p>
                       </div>
                     </li>
                   ))}
@@ -440,25 +564,46 @@ export default function CursosLanding() {
 
               {/* Right Column: Price and CTA */}
               <div className="bg-primary/5 p-8 lg:p-12 flex flex-col justify-center items-center text-center">
-                <Badge className="bg-accent text-accent-foreground mb-4">🎯 Requisito para Bonos de Carbono</Badge>
+                <Badge className="bg-accent text-accent-foreground mb-4">
+                  🎯 Requisito para Bonos de Carbono
+                </Badge>
                 <h3 className="text-2xl font-bold mb-2">Inversión Única</h3>
                 <div className="flex items-baseline gap-2 mb-4">
                   <span className="text-5xl font-bold text-primary">$800</span>
                   <span className="text-xl text-muted-foreground">MXN</span>
                 </div>
                 <p className="text-muted-foreground max-w-xs mb-6">
-                  Este curso es el primer paso para unirte a nuestro programa de Bonos de Carbono y generar ingresos
-                  adicionales.
+                  Este curso es el primer paso para unirte a nuestro programa de
+                  Bonos de Carbono y generar ingresos adicionales.
                 </p>
-                <Button asChild size="lg" className="w-full bg-primary hover:bg-primary/90 text-primary-foreground">
-                  <Link href="/cursos/checkout" className="flex items-center justify-center gap-2">
+                <Button
+                  asChild
+                  size="lg"
+                  className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                >
+                  <Link
+                    href="/cursos/checkout"
+                    className="flex items-center justify-center gap-2"
+                  >
                     Inscribirme Ahora
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                    <svg
+                      className="w-5 h-5"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M13 7l5 5m0 0l-5 5m5-5H6"
+                      />
                     </svg>
                   </Link>
                 </Button>
-                <p className="text-sm text-muted-foreground text-center mt-3">Acceso inmediato después del pago</p>
+                <p className="text-sm text-muted-foreground text-center mt-3">
+                  Acceso inmediato después del pago
+                </p>
               </div>
             </div>
           </div>
@@ -475,7 +620,8 @@ export default function CursosLanding() {
               Contenido del <span className="text-primary">Curso</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              5 módulos diseñados por expertos para transformar tu conocimiento en ganadería regenerativa.
+              5 módulos diseñados por expertos para transformar tu conocimiento
+              en ganadería regenerativa.
             </p>
           </div>
 
@@ -493,7 +639,9 @@ export default function CursosLanding() {
               <CardContent className="p-6 space-y-6">
                 <div className="space-y-4">
                   <div className="border-l-4 border-l-primary pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-primary mb-2">Situación Actual de la Ganadería</h5>
+                    <h5 className="font-semibold text-primary mb-2">
+                      Situación Actual de la Ganadería
+                    </h5>
                     <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                       <li>Malas prácticas vs prácticas regenerativas</li>
                       <li>Objetivos de la ganadería regenerativa</li>
@@ -502,7 +650,9 @@ export default function CursosLanding() {
                   </div>
 
                   <div className="border-l-4 border-l-secondary pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-secondary mb-2">Impacto de la Revolución Verde</h5>
+                    <h5 className="font-semibold text-secondary mb-2">
+                      Impacto de la Revolución Verde
+                    </h5>
                     <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                       <li>Ciclo de agroquímicos y consecuencias</li>
                       <li>Daños a la salud y medio ambiente</li>
@@ -511,7 +661,9 @@ export default function CursosLanding() {
                   </div>
 
                   <div className="border-l-4 border-l-accent pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-accent mb-2">Ganadería y Cambio Climático</h5>
+                    <h5 className="font-semibold text-accent mb-2">
+                      Ganadería y Cambio Climático
+                    </h5>
                     <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                       <li>Contribución a gases efecto invernadero</li>
                       <li>Ganadería confinada e impacto ambiental</li>
@@ -535,7 +687,9 @@ export default function CursosLanding() {
               <CardContent className="p-6 space-y-6">
                 <div className="space-y-4">
                   <div className="border-l-4 border-l-secondary pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-secondary mb-2">Bases Teóricas del Pastoreo</h5>
+                    <h5 className="font-semibold text-secondary mb-2">
+                      Bases Teóricas del Pastoreo
+                    </h5>
                     <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                       <li>Simbiosis entre sabana y herbívoros</li>
                       <li>Leyes del pastoreo de André Voisin</li>
@@ -544,7 +698,9 @@ export default function CursosLanding() {
                   </div>
 
                   <div className="border-l-4 border-l-accent pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-accent mb-2">Implementación Práctica</h5>
+                    <h5 className="font-semibold text-accent mb-2">
+                      Implementación Práctica
+                    </h5>
                     <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                       <li>Agua, tiempo de impacto y reposo</li>
                       <li>Densidad animal óptima</li>
@@ -553,7 +709,9 @@ export default function CursosLanding() {
                   </div>
 
                   <div className="border-l-4 border-l-primary pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-primary mb-2">Beneficios del Sistema</h5>
+                    <h5 className="font-semibold text-primary mb-2">
+                      Beneficios del Sistema
+                    </h5>
                     <ul className="text-sm text-muted-foreground space-y-1 list-disc list-inside">
                       <li>Beneficios económicos</li>
                       <li>Beneficios productivos</li>
@@ -577,7 +735,9 @@ export default function CursosLanding() {
               <CardContent className="p-6 space-y-6">
                 <div className="space-y-4">
                   <div className="border-l-4 border-l-accent pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-accent mb-2">Genética Animal Adaptada</h5>
+                    <h5 className="font-semibold text-accent mb-2">
+                      Genética Animal Adaptada
+                    </h5>
                     <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
                       <li>Rentabilidad máxima por hectárea</li>
                       <li>Cruzamiento y crianza pura</li>
@@ -586,7 +746,9 @@ export default function CursosLanding() {
                   </div>
 
                   <div className="border-l-4 border-l-primary pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-primary mb-2">Búfalos en Sistemas Regenerativos</h5>
+                    <h5 className="font-semibold text-primary mb-2">
+                      Búfalos en Sistemas Regenerativos
+                    </h5>
                     <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
                       <li>Producción de leche y carne</li>
                       <li>Comparativa sistemas tradicionales</li>
@@ -595,7 +757,9 @@ export default function CursosLanding() {
                   </div>
 
                   <div className="border-l-4 border-l-secondary pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-secondary mb-2">Selección Natural</h5>
+                    <h5 className="font-semibold text-secondary mb-2">
+                      Selección Natural
+                    </h5>
                     <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
                       <li>Animales eficientes según el medio</li>
                       <li>Fertilidad y adaptación</li>
@@ -619,7 +783,9 @@ export default function CursosLanding() {
               <CardContent className="p-6 space-y-6">
                 <div className="space-y-4">
                   <div className="border-l-4 border-l-destructive pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-red-700 mb-2">Fundamentos del Carbono</h5>
+                    <h5 className="font-semibold text-red-700 mb-2">
+                      Fundamentos del Carbono
+                    </h5>
                     <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
                       <li>El carbono y su efecto a gran escala</li>
                       <li>Principales fuentes de GEI</li>
@@ -628,7 +794,9 @@ export default function CursosLanding() {
                   </div>
 
                   <div className="border-l-4 border-l-primary pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-primary mb-2">Programa de Bonos</h5>
+                    <h5 className="font-semibold text-primary mb-2">
+                      Programa de Bonos
+                    </h5>
                     <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
                       <li>Objetivos del programa</li>
                       <li>Tipos de proyectos para mitigar CO2e</li>
@@ -637,7 +805,9 @@ export default function CursosLanding() {
                   </div>
 
                   <div className="border-l-4 border-l-secondary pl-4 bg-muted/50 p-4 rounded-r-lg">
-                    <h5 className="font-semibold text-secondary mb-2">Comercialización</h5>
+                    <h5 className="font-semibold text-secondary mb-2">
+                      Comercialización
+                    </h5>
                     <ul className="text-sm text-gray-700 space-y-1 list-disc list-inside">
                       <li>Clasificación: regulados y voluntarios</li>
                       <li>Proceso de emisión y comercialización</li>
@@ -662,7 +832,9 @@ export default function CursosLanding() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                   <div className="space-y-4">
                     <div className="border-l-4 border-l-blue-500 pl-4 bg-blue-50 p-4 rounded-r-lg">
-                      <h5 className="font-semibold text-blue-800 mb-2">Aplicación Práctica</h5>
+                      <h5 className="font-semibold text-blue-800 mb-2">
+                        Aplicación Práctica
+                      </h5>
                       <ul className="text-sm text-gray-800 space-y-1 list-disc list-inside">
                         <li>Videos del día de campo</li>
                         <li>Demostración práctica de conceptos teóricos</li>
@@ -673,7 +845,9 @@ export default function CursosLanding() {
 
                   <div className="space-y-4">
                     <div className="border-l-4 border-l-blue-400 pl-4 bg-blue-50 p-4 rounded-r-lg">
-                      <h5 className="font-semibold text-blue-800 mb-2">Desarrollo de Temas</h5>
+                      <h5 className="font-semibold text-blue-800 mb-2">
+                        Desarrollo de Temas
+                      </h5>
                       <ul className="text-sm text-gray-800 space-y-1 list-disc list-inside">
                         <li>Continuación de módulos anteriores</li>
                         <li>Ejemplos en campo real</li>
@@ -693,30 +867,38 @@ export default function CursosLanding() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 space-y-4">
             <h2 className="text-4xl lg:text-5xl font-bold text-balance">
-              ¿Qué son los <span className="text-primary">Bonos de Carbono</span> y cómo me benefician?
+              ¿Qué son los{" "}
+              <span className="text-primary">Bonos de Carbono</span> y cómo me
+              benefician?
             </h2>
             <p className="text-xl text-muted-foreground max-w-4xl mx-auto">
-              Descubre cómo tus prácticas ganaderas pueden convertirse en una poderosa herramienta contra el cambio
-              climático y una nueva fuente de ingresos.
+              Descubre cómo tus prácticas ganaderas pueden convertirse en una
+              poderosa herramienta contra el cambio climático y una nueva fuente
+              de ingresos.
             </p>
           </div>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-20">
             <div className="space-y-6">
-              <h3 className="text-3xl font-bold">Un Incentivo por Cuidar el Planeta</h3>
+              <h3 className="text-3xl font-bold">
+                Un Incentivo por Cuidar el Planeta
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Los bonos de carbono son un <strong>incentivo financiero</strong> que recibes por implementar prácticas
-                que capturan y almacenan carbono en el suelo. Cada bono equivale a una tonelada de CO₂ que se ha
+                Los bonos de carbono son un{" "}
+                <strong>incentivo financiero</strong> que recibes por
+                implementar prácticas que capturan y almacenan carbono en el
+                suelo. Cada bono equivale a una tonelada de CO₂ que se ha
                 eliminado de la atmósfera gracias a tu trabajo.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                Estos bonos son comprados por grandes empresas que buscan compensar sus emisiones, convirtiendo tu
-                esfuerzo en un motor de cambio global y en un beneficio económico directo para ti.
+                Estos bonos son comprados por grandes empresas que buscan
+                compensar sus emisiones, convirtiendo tu esfuerzo en un motor de
+                cambio global y en un beneficio económico directo para ti.
               </p>
             </div>
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg">
               <Image
-                src="/placeholder.svg?height=320&width=480&text=Concepto+Bonos+Carbono"
+                src="/images/bonos-carbono-1.jpg"
                 alt="Concepto de Bonos de Carbono"
                 fill
                 className="object-cover bg-white"
@@ -727,26 +909,31 @@ export default function CursosLanding() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="relative h-80 rounded-2xl overflow-hidden shadow-lg lg:order-last">
               <Image
-                src="/placeholder.svg?height=320&width=480&text=Alianza+Pijije+Boomitra"
+                src="/images/bonos-carbono-2.jpg"
                 alt="Alianza Pijije Regenerativo y Boomitra"
                 fill
                 className="object-cover bg-white"
               />
             </div>
             <div className="space-y-6 lg:order-first">
-              <h3 className="text-3xl font-bold">El Proyecto Pijije Regenerativo: Tu Aliado Estratégico</h3>
+              <h3 className="text-3xl font-bold">
+                El Proyecto Pijije Regenerativo: Tu Aliado Estratégico
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
-                Nos asociamos con <strong>Boomitra</strong>, el mercado internacional líder en carbono del suelo, para
-                garantizar un proceso transparente y eficiente.
+                Nos asociamos con <strong>Boomitra</strong>, el mercado
+                internacional líder en carbono del suelo, para garantizar un
+                proceso transparente y eficiente.
               </p>
               <ul className="space-y-4">
                 <CheckListItem>
-                  <strong>Pijije Regenerativo</strong> te brinda el acompañamiento técnico y la capacitación para
-                  optimizar tus recursos.
+                  <strong>Pijije Regenerativo</strong> te brinda el
+                  acompañamiento técnico y la capacitación para optimizar tus
+                  recursos.
                 </CheckListItem>
                 <CheckListItem>
-                  <strong>Boomitra</strong> se encarga de medir, certificar y vender los bonos generados, utilizando
-                  tecnología satelital de punta.
+                  <strong>Boomitra</strong> se encarga de medir, certificar y
+                  vender los bonos generados, utilizando tecnología satelital de
+                  punta.
                 </CheckListItem>
               </ul>
             </div>
@@ -758,7 +945,9 @@ export default function CursosLanding() {
       <section className="py-24 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h3 className="text-4xl font-bold">Beneficios Directos para Ti y tu Rancho</h3>
+            <h3 className="text-4xl font-bold">
+              Beneficios Directos para Ti y tu Rancho
+            </h3>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
@@ -783,7 +972,7 @@ export default function CursosLanding() {
               },
               {
                 title: "Ingreso Adicional Seguro",
-                text: "Recibirás el 55% del valor de cada bono de carbono vendido.",
+                text: "Genera ingresos adicionales de $2,000 a $6,000 MXN por cada bono de carbono vendido. El monto depende de tu técnica de manejo del ecosistema y pastoreo regenerativo.",
                 icon: (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -823,7 +1012,10 @@ export default function CursosLanding() {
                 ),
               },
             ].map((item, index) => (
-              <Card key={index} className="text-center p-8 hover:shadow-2xl transition-shadow duration-300">
+              <Card
+                key={index}
+                className="text-center p-8 hover:shadow-2xl transition-shadow duration-300"
+              >
                 <div className="text-5xl mb-4">{item.icon}</div>
                 <h4 className="text-xl font-bold mb-2">{item.title}</h4>
                 <p className="text-muted-foreground">{item.text}</p>
@@ -841,27 +1033,58 @@ export default function CursosLanding() {
               Galería de <span className="text-primary">Eventos</span>
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              Nuestros eventos y conferencias sobre ganadería regenerativa han impactado a miles de productores
+              Nuestros eventos y conferencias sobre ganadería regenerativa han
+              impactado a miles de productores
             </p>
           </div>
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {[
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+1", alt: "Conferencia en auditorio" },
               {
-                src: "/placeholder.svg?height=256&width=256&text=Evento+2",
+                src: "/images/galeria/evento-2.jpg",
+                alt: "Conferencia en auditorio",
+              },
+              {
+                src: "/images/galeria/evento-3.jpg",
                 alt: "Presentación Manejo Holístico Tropical",
               },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+3", alt: "Stands de exhibición" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+4", alt: "Audiencia en conferencia" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+5", alt: "Participantes del evento" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+6", alt: "Centro de Convenciones Campeche" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+7", alt: "Fila de participantes esperando" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+8", alt: "Presentación en salón" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+9", alt: "Mesa de registro" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+10", alt: "Conferencia Manejo Holístico" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+11", alt: "Área de networking" },
-              { src: "/placeholder.svg?height=256&width=256&text=Evento+12", alt: "Panel de expertos" },
+              {
+                src: "/images/galeria/evento-4.jpg",
+                alt: "Stands de exhibición",
+              },
+              {
+                src: "/images/galeria/evento-5.jpg",
+                alt: "Audiencia en conferencia",
+              },
+              {
+                src: "/images/galeria/evento-6.jpg",
+                alt: "Participantes del evento",
+              },
+              {
+                src: "/images/galeria/evento-7.jpg",
+                alt: "Centro de Convenciones Campeche",
+              },
+              {
+                src: "/images/galeria/evento-8.jpg",
+                alt: "Fila de participantes esperando",
+              },
+              {
+                src: "/images/galeria/evento-9.jpg",
+                alt: "Presentación en salón",
+              },
+              { src: "/images/galeria/evento-10.jpeg", alt: "Ganado" },
+              {
+                src: "/images/galeria/evento-11.jpg",
+                alt: "Conferencia Manejo Holístico",
+              },
+              {
+                src: "/images/galeria/evento-12.jpg",
+                alt: "Área de networking",
+              },
+              {
+                src: "/images/galeria/evento-13.jpg",
+                alt: "Panel de expertos",
+              },
             ].map((image, index) => (
               <div
                 key={index}
@@ -910,7 +1133,7 @@ export default function CursosLanding() {
                   </svg>
                 </div>
                 <p className="font-semibold">WhatsApp</p>
-                <p className="text-sm text-gray-600">+52 993 287 8909</p>
+                <p className="text-sm text-gray-600">+52 93 4115 0595</p>
               </div>
 
               <div className="flex flex-col items-center">
@@ -931,7 +1154,7 @@ export default function CursosLanding() {
                   </svg>
                 </div>
                 <p className="font-semibold">Tel</p>
-                <p className="text-sm text-gray-600">+52 993 136 8705</p>
+                <p className="text-sm text-gray-600">+52 93 4115 0595</p>
               </div>
 
               <div className="flex flex-col items-center">
@@ -953,7 +1176,9 @@ export default function CursosLanding() {
                   </svg>
                 </div>
                 <p className="font-semibold">Email</p>
-                <p className="text-sm text-gray-600">organicosdeltropico@yahoo.com.mx</p>
+                <p className="text-sm text-gray-600">
+                  organicosdeltropico@yahoo.com.mx
+                </p>
               </div>
             </div>
           </div>
@@ -971,19 +1196,31 @@ export default function CursosLanding() {
                   Orgánicos del Trópico
                 </Link>
                 <span>•</span>
-                <Link href="/que-hacemos" className="hover:text-white transition-colors">
+                <Link
+                  href="/que-hacemos"
+                  className="hover:text-white transition-colors"
+                >
                   ¿Qué Hacemos?
                 </Link>
                 <span>•</span>
-                <Link href="/eventos" className="hover:text-white transition-colors">
+                <Link
+                  href="/eventos"
+                  className="hover:text-white transition-colors"
+                >
                   Eventos
                 </Link>
                 <span>•</span>
-                <Link href="/pijije-regenerativo" className="hover:text-white transition-colors">
+                <Link
+                  href="/pijije-regenerativo"
+                  className="hover:text-white transition-colors"
+                >
                   Pijije Regenerativo
                 </Link>
                 <span>•</span>
-                <Link href="/aviso-privacidad" className="hover:text-white transition-colors">
+                <Link
+                  href="/aviso-privacidad"
+                  className="hover:text-white transition-colors"
+                >
                   Aviso de Privacidad
                 </Link>
               </div>
@@ -1018,5 +1255,5 @@ export default function CursosLanding() {
         </div>
       </footer>
     </div>
-  )
+  );
 }
